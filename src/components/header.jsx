@@ -7,13 +7,13 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-[10px] h-fit w-fit">
-        <div className="flex items-center border rounded-[8px] w-[400px] gap-4 justify-between px-3 py-2">
+        <div className="flex items-center border border-[#808080]/75 rounded-[8px] w-[400px] gap-4 justify-between px-3 py-2">
           <input
             type="text"
-            className="placeholder:text-[16px] outline-none w-full"
+            className="placeholder:text-[16px] placeholder:font-sans placeholder:text-[#808080] outline-none w-full"
             placeholder="Enter item or restaurant you are looking for"
           />
-          <img src="/Vector.svg" alt="" />
+          <img src="/Vector.svg" alt="" className="w-5 h-5"/>
         </div>
 
         <img src="/Bag.png" alt="cart" className="h-6 cursor-pointer" />

@@ -3,11 +3,11 @@ import { Header } from "../components/header";
 import SearchResults from "../components/searchRes";
 
 export default function SearchRes() {
-    <>
-        <Header></Header>  
-        <SearchResults></SearchResults>
-        <Footer></Footer>
-    </>
-    
-
+    return(
+        <>
+            <Header></Header>  
+            <SearchResults></SearchResults>
+            <Footer></Footer>
+        </>
+    )
 }
