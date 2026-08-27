@@ -1,10 +1,10 @@
 const defaultCategories = [
-  { id: 1, name: 'Sandwich', imageUrl: '/categories/sandwich.jpg' },
-  { id: 2, name: 'North Indian Thali', imageUrl: '/categories/thali.jpg' },
-  { id: 3, name: 'Egg Breakfast', imageUrl: '/categories/egg-breakfast.jpg' },
-  { id: 4, name: 'Rolls & Puffs', imageUrl: '/categories/rolls-puffs.jpg' },
-  { id: 5, name: 'Salads', imageUrl: '/categories/salads.jpg' },
-  { id: 6, name: 'Biryani Box', imageUrl: '/categories/biryani-box.jpg' },
+  { id: 1, name: 'Sandwich', imageUrl: '/sandwich.jpg' },
+  { id: 2, name: 'North Indian Thali', imageUrl: '/NorthThai.png' },
+  { id: 3, name: 'Egg Breakfast', imageUrl: '/rolls.png' },
+  { id: 4, name: 'Rolls & Puffs', imageUrl: '/rolls.png' },
+  { id: 5, name: 'Salads', imageUrl: '/salad.png' },
+  { id: 6, name: 'Biryani Box', imageUrl: '/briyani.png' },
 ];
 
 function CategoryItem({ category, isSelected, onSelect }) {
@@ -13,21 +13,21 @@ function CategoryItem({ category, isSelected, onSelect }) {
       type="button"
       onClick={() => onSelect?.(category)}
       aria-pressed={isSelected}
-      className="flex flex-col items-center gap-3 min-w-[90px] md:min-w-[120px] group"
+      className="flex flex-col items-center gap-3 min-w-[90px] "
     >
       <div
-        className={`w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden shadow-sm ring-offset-2 transition-shadow ${
+        className={`w-[140px] h-[140px] rounded-full overflow-hidden ${
           isSelected ? 'ring-2 ring-[#f37021]' : ''
         }`}
       >
         <img
           src={category.imageUrl}
           alt={category.name}
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300 ease-in-out"
+          className="w-full h-full object-cover "
         />
       </div>
 
-      <span className="text-xs md:text-sm font-medium text-gray-700 text-center">
+      <span className="text-[16px] mt-2 font-medium text-center ">
         {category.name}
       </span>
     </button>
@@ -40,8 +40,8 @@ export default function FoodCategories({
   onSelect,
 }) {
   return (
-    <div className="w-full max-w-5xl mx-auto py-8 px-4 bg-white">
-      <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 tracking-tight">
+    <div className="w-full max-w-6xl mx-auto px-4 bg-white py-24">
+      <h2 className="text-[24px] font-display font-medium text-[#202020] mb-6">
         What's on your mind?
       </h2>
 
