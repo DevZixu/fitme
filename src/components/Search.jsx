@@ -6,8 +6,7 @@ export default function RestaurantSearch({ onSearch }) {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(query)
-    navigate('/search')
+    navigate(`/search?q=${encodeURIComponent(query.trim())}`);
   };
 
 

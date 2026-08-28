@@ -1,5 +1,9 @@
+import { useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const dishes = [
   {
+    id: 1,
     name: "Paneer Tikka Rice Bowl",
     imgurl: "rice1.png",
     restaurant: "The Good Bowl",
@@ -8,6 +12,7 @@ const dishes = [
     color: "bg-orange-700",
   },
   {
+    id: 2,
     name: "Dal Fry Rice Bowl - Fried With Ghee",
     imgurl: "rice2.png",
     restaurant: "The Good Bowl",
@@ -16,6 +21,7 @@ const dishes = [
     color: "bg-yellow-500",
   },
   {
+    id: 3,
     name: "Butter Paneer Rice Bowl Large",
     imgurl: "rice3.png",
     restaurant: "The Good Bowl",
@@ -24,6 +30,7 @@ const dishes = [
     color: "bg-stone-200",
   },
   {
+    id:4,
     name: "Paneer Signature Rice Bowl (Regular)",
     imgurl: "rice4.png",
     restaurant: "Fasoo - Wraps & Bowls",
@@ -32,6 +39,7 @@ const dishes = [
     color: "bg-orange-700",
   },
   {
+    id:5,
     name: "Chicken Signature Rice Bowl",
     imgurl: "rice5.png",
     restaurant: "Fasoo - Wraps & Bowls",
@@ -40,6 +48,7 @@ const dishes = [
     color: "bg-red-600",
   },
   {
+    id:6,
     name: "Royal Chicken Rice Bowl (Jumbo)",
     imgurl: "rice6.png",
     restaurant: "Fasoo - Wraps & Bowls",
@@ -51,8 +60,11 @@ const dishes = [
 
 
 function DishCard({ dish }) {
+  const [searchParams] = useSearchParams()
+  const query = searchParams.get('q') ?? '';
+  
   return (
-    <div className="flex gap-[30px] items-center">
+    <Link to={`/selected/${dish.id}`} className="flex gap-[30px] items-center">
       <div className="w-[128px] h-[128px] p-2 shrink-0">
         <img src={dish.imgurl} alt="dish image" className="w-full h-full object-cover rounded-[10px]" />
       </div>
@@ -72,18 +84,20 @@ function DishCard({ dish }) {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
 export default function SearchResults() {
   const rowOne = dishes.slice(0, 3);
   const rowTwo = dishes.slice(3, 6);
+  const [searchParams] = useSearchParams()
+  const query = searchParams.get('q') ?? '';
 
   return (
     <div className="bg-white max-w-6xl mx-auto pb-[5.3rem] mt-6">
       <h2 className="text-[24px] font-medium font-display text-[#000000] mb-4">
-        Search results for " Rice Bowls "
+        Search results for " {query}"
       </h2>
 
       <div className="flex gap-2.5 mb-5">

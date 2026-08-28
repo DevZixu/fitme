@@ -14,7 +14,7 @@ export default function Selected() {
 
   return (
     <div className="bg-white font-sans text-gray-900">
-      {/* Header banner */}
+      {/* Header */}
       <div className=" bg-neutral-900 p-4 flex gap-4 py-[25px] px-[100px]">
         <div className="w-36 h-32 rounded-lg overflow-hidden shrink-0">
           <img src={item.imageUrl} alt={item.restaurant} className="w-full h-full object-cover" />
@@ -24,9 +24,13 @@ export default function Selected() {
           <h1 className="text-lg font-bold">{item.restaurant}</h1>
           <p className="text-xs text-gray-400 mb-2">north indian punjabi</p>
           <div className="flex items-center gap-6 text-xs">
-            <span className="flex items-center gap-1 bg-green-600 text-white rounded px-1.5 py-0.5 text-[10px] font-medium">
-              4.0
-            </span>
+            <div>
+              <img src="/favorite.svg" alt="" srcset="" />
+                <span className="flex items-center gap-1 text-white rounded px-1.5 py-0.5 text-[10px] font-medium">
+                  4.0
+               </span>
+            </div>
+
             <span className="text-gray-300">103+ ratings</span>
             <div>
               <p className="text-gray-200 font-medium">{item.time}</p>
@@ -52,7 +56,7 @@ export default function Selected() {
         </div>
       </div>
 
-      {/*  search + favourite bar */}
+      {/*  search bar */}
       <div className="relative z-10 flex justify-center -mt-[25px]">
         <div className="flex w-[580px] h-[50px] rounded-lg gap-5 borderoverflow-hidden">
           <div className="flex items-center gap-4 px-4 w-[350px] rounded-[10px] h-fit p-[12px] bg-white shadow-[0px_4px_20px_0px_rgba(0,0,0,0.1)] font-sans">
@@ -101,7 +105,6 @@ export default function Selected() {
           </p>
         </div>
 
-        {/* Thumbnail + add */}
         <div className="w-28 shrink-0 pr-6 flex flex-col items-center gap-2">
           <div className="w-26 h-24 rounded-lg overflow-hidden">
             <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
@@ -166,8 +169,6 @@ export default function Selected() {
           </Link>
         </div>
       </div>
-
-      {/* Footer strip */}
       <div className="h-3 bg-orange-500" />
     </div>
   );
