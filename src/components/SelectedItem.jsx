@@ -16,7 +16,7 @@ export default function Selected() {
     <div className="bg-white font-sans text-gray-900">
       {/* Header banner */}
       <div className=" bg-neutral-900 p-4 flex gap-4 py-[25px] px-[100px]">
-        <div className="w-32 h-24 rounded-lg overflow-hidden shrink-0">
+        <div className="w-36 h-32 rounded-lg overflow-hidden shrink-0">
           <img src={item.imageUrl} alt={item.restaurant} className="w-full h-full object-cover" />
         </div>
 
@@ -52,7 +52,7 @@ export default function Selected() {
         </div>
       </div>
 
-      {/* Floating search + favourite bar — straddles header/body boundary */}
+      {/*  search + favourite bar */}
       <div className="relative z-10 flex justify-center -mt-[25px]">
         <div className="flex w-[580px] h-[50px] rounded-lg gap-5 borderoverflow-hidden">
           <div className="flex items-center gap-4 px-4 w-[350px] rounded-[10px] h-fit p-[12px] bg-white shadow-[0px_4px_20px_0px_rgba(0,0,0,0.1)] font-sans">
@@ -127,9 +127,9 @@ export default function Selected() {
                   <p className="text-xs text-gray-500">₹599</p>
                 </div>
                 <div className='flex gap-3'>
-                  <button >-</button>
+                  <button onClick={()=> { if(first != 0 ) setFirst(first - 1) }}>-</button>
                   <p>{first}</p>
-                  <button >+</button>
+                  <button onClick={()=> setFirst(first + 1)}>+</button>
                 </div>
               </div>
             </div>
@@ -141,9 +141,9 @@ export default function Selected() {
                   <p className="text-xs text-gray-500">₹200</p>
                 </div>
                 <div className='flex gap-3'>
-                  <button >-</button>
+                  <button onClick={()=> { if (second != 0) {setSecond(second - 1)}}}>-</button>
                   <p>{second}</p>
-                  <button>+</button>
+                  <button onClick={()=> setSecond(second + 1)}>+</button>
                 </div>
               </div>
    

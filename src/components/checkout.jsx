@@ -2,13 +2,13 @@
 export default function CheckoutUI() {
   return (
     <div className="bg-white p-6 font-sans text-gray-900 flex flex-col justify-center items-center">
-      <h1 className="text-base font-semibold mb-6 pb-2 border-b border-[#202020] items-stretch w-[80%]">
+      <h1 className="text-base font-semibold mb-6 pb-2 border-b border-[#202020] items-stretch w-[85%]">
         Secure Checkout
       </h1>
 
       <div className="flex gap-8">
         {/* Left / main column */}
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 max-w-3xl">
           {/* Delivery address */}
           <div className="flex items-center gap-1.5 text-sm font-semibold mb-3">
             
@@ -16,7 +16,7 @@ export default function CheckoutUI() {
           </div>
 
           <div className="flex gap-3 mb-6">
-            <div className="flex items-start gap-2 flex-1 rounded-lg border-2 border-blue-400 bg-orange-500 text-white p-3">
+            <div className="flex items-start gap-2 flex-1 rounded-lg bg-orange-500 text-white p-3">
               
               <p className="text-xs leading-snug">
                 Dno. 12-34-12, KYC Apartments, DOOR Colony, Hyderabad, Telangana

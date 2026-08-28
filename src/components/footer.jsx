@@ -35,7 +35,7 @@ export default function Footer({ phone = '+911234567890' }) {
           <div className="text-xs md:text-sm font-medium tracking-wide shrink-0">
             <span>Contact : </span>
             <a href={`tel:${phone}`}>
-              {phone.replace(/^\+91/, '+91 ')}
+              {phone}
             </a>
           </div>
         </div>
