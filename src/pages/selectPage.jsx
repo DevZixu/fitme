@@ -1,12 +1,12 @@
 import Footer from "../components/footer";
 import { Header } from "../components/header";
-import { SelectPage } from "../components/SelectedItem";
+import  Selected  from "../components/SelectedItem";
 
 export default function SelectPage(params) {
     return(
         <>
             <Header></Header>
-            <SelectPage></SelectPage>
+            <Selected></Selected>
             <Footer></Footer>
         </>
     )

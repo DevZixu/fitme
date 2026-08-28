@@ -1,4 +1,6 @@
-const defaultRecommendations = [
+import { Link } from 'react-router-dom';
+
+ export const defaultRecommendations = [
   {
     id: 1,
     title: 'Baked Pizza Wrap - Vegetarian',
@@ -33,12 +35,10 @@ const defaultRecommendations = [
   },
 ];
 
-
-function RecommendationCard({ item, onSelect }) {
+function RecommendationCard({ item }) {
   return (
-    <button
-      type="button"
-      onClick={() => onSelect?.(item)}
+    <Link
+      to={`/selected/${item.id}`}
       className="bg-[#f5f5f5] rounded-2xl p-3 flex flex-col justify-between text-left w-[15rem]"
     >
       <div className="px-2 pt-1 font-display flex flex-col gap-4">
@@ -53,22 +53,19 @@ function RecommendationCard({ item, onSelect }) {
 
       <div className="flex items-center justify-between pt-2 text-xs font-semibold text-gray-700">
         <div className="flex items-center gap-1.5 text-gray-600">
-          <img src="/tag.svg" alt="" srcset="" />
+          <img src="/tag.svg" alt="" />
           <span>{item.price}</span>
         </div>
         <div className="flex items-center gap-1.5 text-gray-600">
-          <img src="/time.svg" alt="" srcset="" />
+          <img src="/time.svg" alt="" />
           <span>{item.time}</span>
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
-export default function PersonalizedRecommendations({
-  items = defaultRecommendations,
-  onSelect,
-}) {
+export default function PersonalizedRecommendations({ items = defaultRecommendations }) {
   return (
     <section className="w-full max-w-6xl mx-auto py-8 px-4 bg-white mb-12">
       <h2 className="text-[24px] font-display font-medium text-[#202020] mb-6">
@@ -77,7 +74,7 @@ export default function PersonalizedRecommendations({
 
       <div className="grid grid-cols-4 gap-5">
         {items.map((item) => (
-          <RecommendationCard key={item.id} item={item} onSelect={onSelect} />
+          <RecommendationCard key={item.id} item={item} />
         ))}
       </div>
     </section>

@@ -17,7 +17,7 @@ const socialLinks = [
 export default function Footer({ phone = '+911234567890' }) {
   return (
     <footer className="w-full bg-[#f37021] text-white py-10">
-        <div className="flex items-center justify-between max-w-4xl mx-auto">
+        <div className="flex items-center justify-between max-w-5xl mx-auto">
             <div className="flex items-center gap-2 font-bold text-2xl tracking-tight shrink-0">
               <img src="/Subtract2.svg" alt="" className="z-10"/>
               <span>FitMe</span>
@@ -34,13 +34,13 @@ export default function Footer({ phone = '+911234567890' }) {
 
           <div className="text-xs md:text-sm font-medium tracking-wide shrink-0">
             <span>Contact : </span>
-            <a href={`tel:${phone}`} className="hover:underline">
+            <a href={`tel:${phone}`}>
               {phone.replace(/^\+91/, '+91 ')}
             </a>
           </div>
         </div>
         <div className="flex py-4 gap-6 justify-center">
-          {icons.map((icon) => <img src={icon.url} key={icon.key}></img>)}
+          {icons.map((icon) => <img src={icon.url} key={icon.key} className="w-5 h-5"></img>)}
         </div>
     </footer>
   );
