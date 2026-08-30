@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { fetchData } from '../helpers/fetchdata';
+import { useEffect } from 'react';
 
  export const defaultRecommendations = [
   {
@@ -35,6 +37,8 @@ import { Link } from 'react-router-dom';
   },
 ];
 
+
+
 function RecommendationCard({ item }) {
   return (
     <Link
@@ -66,6 +70,7 @@ function RecommendationCard({ item }) {
 }
 
 export default function PersonalizedRecommendations({ items = defaultRecommendations }) {
+  useEffect(fetchData(0, "https://www.themealdb.com/api/json/v1/1/search.php?f=a"), [])
   return (
     <section className="w-full max-w-6xl mx-auto py-8 px-4 bg-white mb-12">
       <h2 className="text-[24px] font-display font-medium text-[#202020] mb-6">

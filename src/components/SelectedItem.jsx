@@ -9,36 +9,43 @@ export default function Selected() {
   const item = defaultRecommendations.find((i) => String(i.id) === id);
 
   if (!item) {
-    return <p className="p-8 text-gray-500">Item not found.</p>;
+    return <p className="p-8 text-[#202020]">Item not found.</p>;
   }
 
   return (
     <div className="bg-white font-sans text-gray-900">
       {/* Header */}
-      <div className=" bg-neutral-900 p-4 flex gap-4 py-[25px] px-[100px]">
+      <div className=" bg-neutral-900 p-4 flex gap-4 py-[25px] px-[100px] mb-1">
         <div className="w-36 h-32 rounded-lg overflow-hidden shrink-0">
           <img src={item.imageUrl} alt={item.restaurant} className="w-full h-full object-cover" />
         </div>
 
-        <div className="flex-1 text-white">
+        <div className="flex-1 text-white flex-col gap-3">
           <h1 className="text-lg font-bold">{item.restaurant}</h1>
-          <p className="text-xs text-gray-400 mb-2">north indian punjabi</p>
+          <p className="text-xs text-white mt-3 mb-2">north indian punjabi</p>
           <div className="flex items-center gap-6 text-xs">
-            <div>
-              <img src="/favorite.svg" alt="" srcset="" />
-                <span className="flex items-center gap-1 text-white rounded px-1.5 py-0.5 text-[10px] font-medium">
-                  4.0
-               </span>
-            </div>
+            <div className='flex gap-14'>
+              <div className='flex flex-col gap-2'>
+                <div className='flex items-center'>
+                    <img src="/greenfav.svg" alt="" srcset=""  className='w-4 h-4'/>
+                      <p className="flex items-center gap-1 text-white rounded px-1.5 py-0.5 text-[12px] font-medium">
+                        4.0
+                    </p>
+                    
+                </div>
+                <span className="text-white">100+ ratings</span>
+              </div>
 
-            <span className="text-gray-300">103+ ratings</span>
-            <div>
-              <p className="text-gray-200 font-medium">{item.time}</p>
-              <p className="text-gray-500 text-[10px]">Delivery Time</p>
-            </div>
-            <div>
-              <p className="text-gray-200 font-medium">{item.price}</p>
-              <p className="text-gray-500 text-[10px]">Cost for two</p>
+              
+              
+              <div className='flex flex-col gap-[14px]'>
+                <p className="text-white font-medium">{item.time}</p>
+                <p className="text-white text-[10px]">Delivery Time</p>
+              </div>
+              <div className='flex flex-col gap-[14px]'>
+                <p className="text-white font-medium">{item.price}</p>
+                <p className="text-white text-[10px]">Cost for two</p>
+              </div>
             </div>
           </div>
         </div>
